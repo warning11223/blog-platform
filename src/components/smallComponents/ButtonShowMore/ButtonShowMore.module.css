@@ -1,0 +1,13 @@
+.button {
+    padding: 8px 29px;
+    border: 1px solid #1A1718;
+    max-width: 153px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 44px;
+    margin-bottom: 22px;
+}

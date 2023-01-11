@@ -1,0 +1,63 @@
+.top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+}
+.topTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A1718;
+}
+.dataContainer {
+    margin-top: 28px;
+}
+.dataTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    color: #1A1718;
+    margin-bottom: 8px;
+}
+.dataSpan {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #797476;
+}
+.dataTime {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #797476;
+}
+.mainImage {
+    margin-top: 20px;
+}
+.text1 {
+    margin-top: 40px;
+}
+.text2 {
+    margin-top: 40px;
+}
+.text3 {
+    margin-top: 40px;
+}
+.text4 {
+    margin-top: 40px;
+    margin-bottom: 103px;
+}
+.text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A1718;
+    max-width: 940px;
+}

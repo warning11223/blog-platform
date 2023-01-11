@@ -2,7 +2,7 @@
     display: flex;
 }
 .mainLeft {
-    height: calc(100vh - 60px);
+    min-height: 100%;
     background: #FCFBFB;
     display: flex;
     justify-content: center;
@@ -36,6 +36,10 @@
 
     transition: all .2s linear;
 }
+.listItem.active {
+    color: #F8346B;
+}
 .listItem:hover {
     color: #F8346B;
 }
+

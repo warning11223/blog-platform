@@ -1,0 +1,30 @@
+.cardImage {
+    margin-bottom: 18px;
+}
+.cardBottom {
+
+}
+.cardTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A1718;
+    margin-bottom: 12px;
+}
+.cardText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A1718;
+    margin-bottom: 6px;
+}
+.cardDate {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #636262;
+}
