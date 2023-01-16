@@ -1,18 +1,18 @@
 import React from 'react';
+import {PostsType} from '../../state/state';
 
 import s from './BlogsPage.module.css'
-import arrow_right from '../../img/arrow_right.svg'
-import arrow_left from '../../img/arrow_left.svg'
 import main_image from '../../img/mainImage.png'
 import item_image from '../../img/item_image.png'
 import arrow_down_btn from '../../img/arrow_down_btn.svg'
-import PostsCard from '../PostsCard/PostsCard';
-import {PostsType} from '../Main/Main';
+
+
 import ButtonShowMore from '../smallComponents/ButtonShowMore/ButtonShowMore';
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ItemPageCards from '../ItemPageCards/ItemPageCards';
 import ItemPageHeader from '../smallComponents/ItemPageHeader/ItemPageHeader';
 import ButtonBack from '../smallComponents/ButtonBack/ButtonBack';
+
 
 type ItemPageProps = {
     posts: PostsType[]

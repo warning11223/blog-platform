@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {BlogsType, PostsType} from '../../state/state';
 
-import s from './Posts.module.css'
 import arrow from '../../img/arrowUp.svg';
-import {BlogsType, PostsType} from '../Main/Main';
-
 import search from '../../img/search.svg'
+
 import PostsCard from '../PostsCard/PostsCard';
 import ButtonShowMore from '../smallComponents/ButtonShowMore/ButtonShowMore';
 import {Link} from 'react-router-dom';
+
+import s from './Posts.module.css'
+
 
 type PostsProps = {
     posts?: PostsType[]
@@ -17,6 +19,14 @@ type PostsProps = {
 }
 
 const Posts: React.FC<PostsProps> = ({posts, blogs, title, input}) => {
+    const [visiblePopup, setVisiblePopup] = useState(false)
+    const [activeFilter, setActiveFilter] = useState(`New ${title.toLowerCase()} first`)
+
+    useEffect(() => {
+        setActiveFilter(`New ${title.toLowerCase()} first`)
+    }, [title]);
+
+
     const blogsRender = blogs?.map(item => {
         return (
             <div className={s.blog} key={item.id}>
@@ -25,7 +35,7 @@ const Posts: React.FC<PostsProps> = ({posts, blogs, title, input}) => {
                 </Link>
                 <div className={s.blogRight}>
                     <Link className={s.Link} to={`/${item.title}`}>
-                        <h4 className={s.blogTitle}>{item.title}</h4>
+                        <span className={s.blogTitle}>{item.title}</span>
                     </Link>
                     <p className={s.blogWebsite}>Website: <a className={s.blogLink} href={item.website}>{item.website}</a></p>
                     <p className={s.blogText}>{item.text} </p>
@@ -33,6 +43,40 @@ const Posts: React.FC<PostsProps> = ({posts, blogs, title, input}) => {
             </div>
         )
     })
+
+    const blogsFilters = [
+        {id: 1, name: 'New blogs first'},
+        {id: 2, name: 'Old blogs first'},
+        {id: 3, name: 'From A to Z'},
+        {id: 4, name: 'From Z to A'},
+    ]
+
+    const postsFilters = [
+        {id: 1, name: 'New posts first'},
+        {id: 2, name: 'Old posts first'},
+    ]
+
+    let filtersToRender = title === 'Posts' ? postsFilters : blogsFilters;
+
+    const popup = (
+        <div className={`${title === 'Posts' ? `${s.filterPopupPosts}` : `${s.filterPopup}`}`} >
+            <ul className={s.filterPopupList}>
+
+                {filtersToRender.map(item => {
+                    const activePopupHandler = (name: string) => {
+                        setActiveFilter(name)
+                        setVisiblePopup(false)
+                    }
+
+                    return (
+                        <li className={s.filterPopupListItem} key={item.id}>
+                            <a className={s.filterPopupListLink} href="#" onClick={() => activePopupHandler(item.name)}>{item.name}</a>
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
+    )
 
     return (
         <>
@@ -45,10 +89,19 @@ const Posts: React.FC<PostsProps> = ({posts, blogs, title, input}) => {
                             <input className={s.inputText} type="text" placeholder='Search'/>
                         </div> : ''
                     }
-                    <div className={s.filterInner}>
-                        <span>New {title.toLowerCase()} first</span>
-                        <img src={arrow} alt="icon"/>
-                    </div>
+                    {title === 'Blogs' && (
+                        <div className={s.filterInner} onClick={() => setVisiblePopup(!visiblePopup)}>
+                            <span>{activeFilter}</span>
+                            <img src={arrow} alt="icon"/>
+                        </div>
+                    )}
+                    {title === 'Posts' && (
+                        <div className={s.filterInner} onClick={() => setVisiblePopup(!visiblePopup)}>
+                            <span>{activeFilter}</span>
+                            <img src={arrow} alt="icon"/>
+                        </div>
+                    )}
+                    {visiblePopup && popup}
                 </div>
 
                 <div className={s.cards}>

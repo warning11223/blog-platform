@@ -1,14 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
+import {StateType} from './state/state';
 
-function App() {
+type AppProps = {
+    state: StateType
+}
+
+function App({state}: AppProps) {
   return (
     <>
         <Header />
-        <Main />
+        <Main state={state}/>
     </>
   );
 }

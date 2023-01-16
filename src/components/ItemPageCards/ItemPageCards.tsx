@@ -1,8 +1,9 @@
 import React from 'react';
+import {PostsType} from '../../state/state';
 
-import card_img from '../../img/card.png'
 import s from './ItemPageCards.module.css'
-import {PostsType} from '../Main/Main';
+
+
 
 type ItemPageCardsProps = {
     card: PostsType

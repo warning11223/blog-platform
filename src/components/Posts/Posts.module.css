@@ -26,11 +26,49 @@
     font-size: 14px;
     line-height: 24px;
     cursor: pointer;
+
+    position: relative;
 }
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px 20px;
+}
+.filterPopup {
+    position: absolute;
+    margin-top: 37px;
+    border: 1px solid #DEDBDC;
+    width: 254px;
+    background-color: #FAF7F8;
+}
+.filterPopupPosts {
+    position: absolute;
+    margin-top: 37px;
+    border: 1px solid #DEDBDC;
+    width: 280px;
+    background-color: #FAF7F8;
+}
+.filterPopupList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 12px;
+    list-style: none;
+}
+.filterPopupListLink {
+    text-decoration: none;
+    color: #1A1718;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #1A1718;
+
+    transition: all .2s linear;
+}
+.filterPopupListLink:hover {
+    color: #F8346B;
 }
 
 /*------------------------------------------------------------blog-----------------------------------------*/

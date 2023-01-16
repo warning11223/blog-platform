@@ -1,8 +1,8 @@
 import React from 'react';
 
 import s from './PostsCard.module.css'
-import {PostsType} from '../Main/Main';
 import {Link} from 'react-router-dom';
+import {PostsType} from '../../state/state';
 
 type PostsCardsType = {
     posts: PostsType[]
